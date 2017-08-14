@@ -30,6 +30,24 @@
     position: relative;
 
 }
+
+ .disc-container .icon-wrapper{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FFF;
+    height: 14.9vw;
+    width: 14.9vw;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5)
+} 
+ .disc-container .icon{
+    width: 7vw;
+    fill: #FFF;
+} 
+
 .disc-container .pointer{
     width: 24vw;
     position: absolute;
@@ -52,7 +70,7 @@
 }
 
 .disc-container .cover{
-    width: 44.5vw;
+    width: 49vw;
     position: absolute;
     border-radius: 50%;
 }
@@ -60,7 +78,15 @@
 .disc-container.playing .light{
     animation: circle 20s infinite linear;
 }
-
+ .disc-container .icon-pause{
+    display: none;
+}
+.disc-container.playing .icon-pause{
+    display: block;
+}
+.disc-container.playing .icon-play{
+    display: none;
+} 
 .song-description{
     flex-grow: 1;
     color: #AEABAC;
