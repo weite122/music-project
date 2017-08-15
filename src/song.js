@@ -20,7 +20,7 @@ $(function(){
     })
 
     let audio = document.createElement('audio')
-    audio.src = "http://dl.stream.qqmusic.qq.com/C400001W4LsO0FHzS6.m4a?vkey=86F51F626E69FB4C19A767CB38CDFC11A8D17DCAE203E4B4DF4C0CAD1A1710F03130DCA30B6514B3AF6464D4E2C52951F1F3EDB89A592A60&guid=1803739836&uin=949193531&fromtag=66"
+    audio.src = "//ouohn79z8.bkt.clouddn.com/call%20of%20silience.m4a"
     audio.oncanplay = function(){
         audio.play()
         $('.disc-container').addClass('playing')
