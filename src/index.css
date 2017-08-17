@@ -129,7 +129,9 @@ section>h2:first-child{
 
 }
 
-
+.lastestMusic > p{
+    text-align: center;
+}
 .lastestMusic > ol{
     padding-left: calc(2.6vw + 2px);
 }
@@ -139,6 +141,10 @@ section>h2:first-child{
     position: relative;
 }
 
+.lastestMusic > ol > li a{
+    text-decoration: none;
+    color: inherit;
+}
 .lastestMusic > ol > li h3{
     font-size: 4.53vw;
     font-weight: normal;
