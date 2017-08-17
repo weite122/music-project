@@ -73,10 +73,12 @@
     width: 49vw;
     position: absolute;
     border-radius: 50%;
+    animation: circle 20s infinite linear;
+    animation-play-state: paused;
 }
 .disc-container.playing .cover,
 .disc-container.playing .light{
-    animation: circle 20s infinite linear;
+    animation-play-state: running;
 }
  .disc-container .icon-pause{
     display: none;
