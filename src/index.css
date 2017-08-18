@@ -86,9 +86,17 @@ section>h2:first-child{
     left: -2vw;
     right: -2vw;
 }
-.playlists{
+
+.tabContent > li{
+    display: none;
+}
+
+.tabContent > li.active{
+    display: block;
     margin-top: 32.8vw;
 }
+
+
 .playlists > ul{
     display: flex;
     flex-wrap: wrap;
