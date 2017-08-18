@@ -59,7 +59,7 @@ section>h2:first-child{
 .siteNav ol{
     display: flex;
     text-align: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(0,0,0,.1);
     font-size: 1.1em;
 
 }
@@ -95,8 +95,114 @@ section>h2:first-child{
     display: block;
     margin-top: 32.8vw;
 }
+.tabContent > li:nth-child(3).active{
+    display: block;
+    margin-top: 28.8vw;
+}
 
 
+.tabContent > li > .searchSong > .inputcover svg{
+    width: 3.7vw;
+    height: 3.7vw;
+    color: #333;
+    vertical-align: middle;
+}
+.tabContent > li >.searchSong {
+    padding: 4vw 2.6vw;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,.1)
+}
+
+.tabContent > li >.searchSong > .inputcover {
+    position: relative;
+    height: 8vw;
+    padding: 0 8vw;
+    background: #ebecec;
+    border-radius: 8vw;
+
+}
+.searchSong > .inputcover> .search {
+    position: absolute;
+    left: 0;
+    top: 2.4vw;
+    margin: 0 2.1vw;
+    width: 3.7vw;
+    height: 3.7vw;
+    vertical-align: middle;
+    fill: #bbb;
+}
+ 
+.searchSong > .inputcover> .input {
+    height: 8vw;
+    line-height: 4.8vw;
+    background: transparent;
+    font-size: 3.7vw;
+    color: #333;
+    border:none;
+    outline:none;
+}
+
+.searchSong> .inputcover  > .closebox {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    text-align: center;
+}
+
+
+.searchSong> .inputcover  > .closebox .close {
+    /* display: none; */
+    vertical-align: middle;
+    width: 3.7vw;
+    height: 3.7vw;
+    fill:#bbb;
+}
+
+.tabContent > li > .searchRecommend{
+    display: none;
+}
+.tabContent > li > .hotSearch > h3{
+    font-size: 3.7vw;
+    font-weight: 400;
+    color: #666;
+    margin-top: 2.1vw;
+    margin-left: 3.7vw;
+}
+
+.searchList>li {
+    border: 1px solid rgba(0,0,0,.1);
+    display: inline-block;
+    padding: 0 3.7vw;
+    line-height: 2em;
+    margin-left: 2.1vw;
+    margin-top: 2.1vw;
+    border-radius: 3.7vw;
+}
+.searchRecommend > #output{
+    padding-left: 2.7vw;
+    height: 13.3vw;
+    line-height: 13.3vw;
+    font-size: 4.3vw;
+    color: #507daf;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.searchRecommend >ol> li{
+    padding-left: 2.7vw;
+    height: 13.3vw;
+    line-height: 13.3vw;
+    font-size: 4.3vw;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.searchRecommend >ol >li svg.search{
+    width: 4.3vw;
+    height: 4.3vw;
+    fill: #aaa;
+    margin-right: 2vw;
+    margin-bottom: -1px;
+}
 .playlists > ul{
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +224,8 @@ section>h2:first-child{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-  .playlists > ul img{
+
+.playlists > ul img{
     width: 100%;
 }
 .playlists > ul > li .icon-listen{
@@ -220,3 +327,5 @@ section.art .copyright{
     text-align: center;
     color: #888;
 }
+
+

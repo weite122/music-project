@@ -41,12 +41,13 @@ $('.siteNav').on('tabChange',function(e,index){
     return
   }
   if(index === 1){
+    return
     $.get('./page2.json').then((response)=>{
       $li.text(response.content)
       $li.attr('data-downloaded','yes')
-      console.log(response)
     })
   }else if(index === 2){
+    return
     $.get('./page3.json').then((response)=>{
       $li.text(response.content)
       $li.attr('data-downloaded','yes')
@@ -54,6 +55,60 @@ $('.siteNav').on('tabChange',function(e,index){
   }
 })
 
+let timer = undefined
+$('input#searchSong').on('input', function(e){
+  let $input = $(e.currentTarget)
+  let value = $input.val().trim()
+  if(value === ''){return}
 
+  if(timer){
+    clearTimeout(timer)
+  }
+
+  timer = setTimeout(function(){
+    search(value).then((result)=>{
+      timer = undefined
+      if(result.length !== 0){
+        $('#output').empty()
+        let $ul = $('<ul></ul>')
+        result.forEach((item)=>{
+          let $li = $(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
+          $li.appendTo($ul)
+        })
+        $('#output').append($ul)
+      }else{
+        $('#output').html('搜索+"keyword"')
+      }
+    })
+  },300)
+
+
+})
+
+function search(keyword){
+  console.log('搜索'+keyword)
+  return new Promise((resolve, reject)=>{
+    var database = [
+      { "id": 1, "name":"Earned It", },
+      { "id": 2, "name":"Faded (Restrung)", },
+      { "id": 3, "name":"NEXT TO YOU(Rhodes Version)", },
+      { "id": 4, "name":"New Year's Eve", },
+      { "id": 5, "name":"No One - Reprise", },
+      { "id": 6, "name":"Shape of You", },
+      { "id": 7, "name":"Safe And Sound", },
+      { "id": 8, "name":"We Don't Talk Anymore", },
+      { "id": 9, "name":"call of silience", },
+      { "id": 10, "name":"justice-2", }
+    ]
+    let result = database.filter(function(item){
+      return item.name.indexOf(keyword)>=0
+    })
+    setTimeout(function(){
+      console.log('搜到'+keyword+ '的结果')
+      resolve(result)
+  }, (Math.random()*200 + 1000))
+  })
+}
+window.search = search
 })
 
