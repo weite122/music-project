@@ -95,11 +95,67 @@ section>h2:first-child{
     display: block;
     margin-top: 32.8vw;
 }
+
+.tabContent > li:nth-child(2).active {
+    display: block;
+    margin-top: 28vw;
+}
+
 .tabContent > li:nth-child(3).active{
     display: block;
     margin-top: 28.8vw;
 }
 
+.hotMusicList > .hotTop{
+    position: relative;
+    padding-top: 38.9%;
+    overflow: hidden;
+    background: url(//s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee) no-repeat;
+    background-size: contain;
+}
+.hotMusicList > .hotTop::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,.2);
+}
+.hotMusicList > .hotTop > .hotTopContainer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding-left: 5.3vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hotMusicList > .hotTop > .hotTopContainer > .hotIcon {
+    background: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880) no-repeat;
+    background-size: 44.3vw 26vw;
+    width: 37.8vw;
+    height: 17.9vw;
+    background-position: -6.7vw -7.7vw;
+}
+
+.hotMusicList > .hotTop > .hotTopContainer > .hotTime {
+    font-size: 3.2vw;
+    color: rgba(255,255,255,.8);
+    margin-top: 2.7vw;
+}
+
+.hotMusicList > .hotFooter{
+    height: 15vw;
+    line-height: 15vw;
+    text-align: center;
+    color: #aaa;
+}
 
 .tabContent > li > .searchSong > .inputcover svg{
     width: 3.7vw;
