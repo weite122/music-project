@@ -294,7 +294,6 @@ section>h2:first-child{
     width: 2.7vw;
     height: 2.7vw;
     fill: #fff;
-
 }
 .lastestMusic{
 
@@ -385,3 +384,7 @@ section.art .copyright{
 }
 
 
+.introduction{
+    display: flex;
+    padding: 
+}
