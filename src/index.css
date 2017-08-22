@@ -48,7 +48,7 @@ section>h2:first-child{
     padding: 0 .6em;
 }
 .siteNav{
-    margin-top: 17.1VW;
+    margin-top: 17vw;
     position: fixed;
     top: 0;
     left: 0;
@@ -157,12 +157,7 @@ section>h2:first-child{
     color: #aaa;
 }
 
-.tabContent > li > .searchSong > .inputcover svg{
-    width: 3.7vw;
-    height: 3.7vw;
-    color: #333;
-    vertical-align: middle;
-}
+
 .tabContent > li >.searchSong {
     padding: 4vw 2.6vw;
     position: relative;
@@ -209,8 +204,11 @@ section>h2:first-child{
 }
 
 
-.searchSong> .inputcover  > .closebox .close {
+.searchSong> .inputcover  > .closebox svg.close {
     /* display: none; */
+    position: absolute;
+    right: 2vw;
+    top: 2.4vw;
     vertical-align: middle;
     width: 3.7vw;
     height: 3.7vw;
@@ -295,9 +293,7 @@ section>h2:first-child{
     height: 2.7vw;
     fill: #fff;
 }
-.lastestMusic{
 
-}
 
 .lastestMusic > p{
     text-align: center;
@@ -386,5 +382,4 @@ section.art .copyright{
 
 .introduction{
     display: flex;
-    padding: 
 }

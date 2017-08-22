@@ -5,12 +5,22 @@ $(function(){
     $.get('./songs.json').then(function(response){
         let songs = response
         let song = songs.filter(s=>s.id === id)[0]
-        let {url,name,lyric} = song
+        let {url,name,lyric,image,backgroundImage} = song
+        console.log(song)
         initPlayer.call(undefined,url)
         initText(name, lyric)
+        PlaceImage(image,backgroundImage)
     })
 
-    function initText(name, lyric){
+    function PlaceImage(image,backgroundImage){
+       let $disc = $('.disc-container>.disc')
+       let $image = $('<img class="cover">')
+       $image[0].src = image
+       $disc.append($image)
+       $('.page').css("background-image","url("+backgroundImage+")")
+  
+    }  
+       function initText(name, lyric){
         $('.song-description > h1').text(name)
         parseLyric(lyric)
     }

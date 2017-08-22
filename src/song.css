@@ -21,14 +21,13 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: transparent url(http://p4.music.126.net/C39b7OR9LfGaiGSZyeUzFg==/17926437579518717.jpg)  no-repeat center;
+    background: transparent url()  no-repeat center;
     background-size: cover;
     
 }
 
 .disc-container{
     position: relative;
-
 }
 
  .disc-container .icon-wrapper{
@@ -102,7 +101,7 @@
 }
 
 .song-description p{
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
 }
 .song-description p.active{
