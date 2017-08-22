@@ -183,6 +183,9 @@ body{
     fill:#666; 
 }
 
+.playlist{
+    margin-bottom: 20vw;
+}
 .playlist > h6{
     padding: 1vw 2.7vw;
     font-size: 3.2vw;
