@@ -48,7 +48,7 @@ section>h2:first-child{
     padding: 0 .6em;
 }
 .siteNav{
-    margin-top: 17vw;
+    margin-top: 16.8vw;
     position: fixed;
     top: 0;
     left: 0;
@@ -67,6 +67,8 @@ section>h2:first-child{
     list-style: none;
     flex: 1;
 }
+
+
 .siteNav > ol > li.active{
     color: #D43C33;
 }
@@ -268,6 +270,11 @@ section>h2:first-child{
     margin-bottom: 4vw;
     position: relative;
 }
+
+.playlists > ul > li > a{
+    text-decoration: none;
+    color: inherit;
+}
 .playlists > ul > li p{
     padding: 0 1vw;
     line-height: 4vw;
@@ -382,4 +389,23 @@ section.art .copyright{
 
 .introduction{
     display: flex;
+}
+
+ 
+.lastestMusic > ol > li .listNumber{
+    width: 10.7vw;
+    height: 10.7vw;
+    font-size: 4.5vw;
+    line-height: 10.7vw;
+    position: absolute;
+    left: 0vw;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #aaa;
+    text-align: center;
+}
+.lastestMusic > ol > li .listInformation {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10.7vw;
 }

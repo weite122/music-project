@@ -24,6 +24,55 @@ $(function(){
    })
 
 
+   $.get('./songs.json').then(function(response){
+    let items = response
+    items.forEach((i)=>{
+        let $li = $(`
+        <li>
+        <a href="./song.html?id=${i.id}">
+            <span class="listNumber">${i.id}</span>
+            <div class="listInformation">
+            <h3>${i.name}</h3>
+          <p>
+          <svg class="sq">
+            <use xlink:href="#icon-SQ"></use>
+          </svg>          
+          ${i.information}</p>
+          </div>
+          <svg class="play">
+            <use xlink:href="#icon-play-circle"></use>
+          </svg>
+        </a>
+      </li>
+             `)
+         $('#hotMusic').append($li)
+    })
+ })
+
+
+   $.get('./playlist.json').then(function(response){
+    let items = response
+    items.forEach((i)=>{
+        let $li = $(`
+        <li>
+        <a href="./playlist.html?id=${i.id}">
+        <div>
+          <img src="${i.image}"
+            alt="">
+          <span class="icon-listen">          
+                <svg class="listen">
+                <use xlink:href="#icon-erji"></use>
+              </svg>  
+              241万</span>
+        </div>
+
+        <p>${i.title}</p>
+      </a>
+      </li>
+             `)
+         $('#musicPlaylist').append($li)
+    })
+ })
 
 
 $('.siteNav').on('click','ol.tabItems> li',function(e){
