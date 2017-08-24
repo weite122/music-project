@@ -69,10 +69,6 @@ $(function(){
         return number >= 10? number + '' : '0' + number
     }
 
-    // $.get('/lyric.json').then(function(object){
-    //     let {lyric} = object
-    //     parseLyric.call(undefined,lyric)
-    // })
     function parseLyric(lyric){
         let array = lyric.split('\n')
         let regex = /^\[(.+)\](.*)$/ 
