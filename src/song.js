@@ -1,12 +1,12 @@
 $(function(){
 
     let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
-    
+
     $.get('./songs.json').then(function(response){
         let songs = response
         let song = songs.filter(s=>s.id === id)[0]
         let {url,name,lyric,image,backgroundImage} = song
-        console.log(song)
+        // console.log(song)
         initPlayer.call(undefined,url)
         initText(name, lyric)
         PlaceImage(image,backgroundImage)

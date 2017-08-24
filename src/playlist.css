@@ -26,7 +26,7 @@ body{
     right: 0;
     bottom: 0;
     z-index: 1;
-    background:url(//music.163.com/api/img/blur/3265549553028224?param=170y170) no-repeat 0 0;
+    background: no-repeat 0 0;
     background-size:cover;
     filter: blur(20px);
     z-index: 1;
@@ -220,8 +220,8 @@ body{
     transform: translateY(-50%);
     fill: #aaa;
     text-align: center;
-
 }
+
 .lastestMusic > ol > li h3{
     font-size: 4.53vw;
     font-weight: normal;
