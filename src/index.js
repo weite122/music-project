@@ -84,25 +84,41 @@ $('.siteNav').on('click','ol.tabItems> li',function(e){
     .siblings().removeClass('active')
 })
 
-$('.siteNav').on('tabChange',function(e,index){
-  let $li =  $('.tabContent > li').eq(index)
-  if($li.attr('data-downloaded') === 'yes'){
-    return
-  }
-  if(index === 1){
-    return
-    $.get('./page2.json').then((response)=>{
-      $li.text(response.content)
-      $li.attr('data-downloaded','yes')
-    })
-  }else if(index === 2){
-    return
-    $.get('./page3.json').then((response)=>{
-      $li.text(response.content)
-      $li.attr('data-downloaded','yes')
-    })
+// $('.siteNav').on('tabChange',function(e,index){
+//   let $li =  $('.tabContent > li').eq(index)
+//   if($li.attr('data-downloaded') === 'yes'){
+//     return
+//   }
+//   if(index === 1){
+//     return
+//     $.get('./page2.json').then((response)=>{
+//       $li.text(response.content)
+//       $li.attr('data-downloaded','yes')
+//     })
+//   }else if(index === 2){
+//     return
+//     $.get('./page3.json').then((response)=>{
+//       $li.text(response.content)
+//       $li.attr('data-downloaded','yes')
+//     })
+//   }
+// })
+
+$('.closebox').click(function(){
+  $('#searchSong').val("")
+  $('.closebox').hide()
+  $('.hotSearch').show()
+  $('.searchRecommend').hide()
+})
+$('#searchSong').on('keyup',function(){
+  $('.closebox').show()
+  $('.hotSearch').hide()
+  $('.searchRecommend').show()
+  if($('#searchSong').val() === ""){
+    $('.closebox').hide()
   }
 })
+
 
 let timer = undefined
 $('input#searchSong').on('input', function(e){
@@ -118,6 +134,7 @@ $('input#searchSong').on('input', function(e){
     search(value).then((result)=>{
       timer = undefined
       if(result.length !== 0){
+        $('#output').text(result.map((r)=>r.name).join(','))
         $('#output').empty()
         let $ul = $('<ul></ul>')
         result.forEach((item)=>{
@@ -126,13 +143,15 @@ $('input#searchSong').on('input', function(e){
         })
         $('#output').append($ul)
       }else{
-        $('#output').html('搜索+"keyword"')
+        $('#output').html('没有结果')
       }
     })
   },300)
 
 
 })
+
+
 
 function search(keyword){
   console.log('搜索'+keyword)
@@ -152,6 +171,7 @@ function search(keyword){
     let result = database.filter(function(item){
       return item.name.indexOf(keyword)>=0
     })
+    // console.log(result)
     setTimeout(function(){
       console.log('搜到'+keyword+ '的结果')
       resolve(result)

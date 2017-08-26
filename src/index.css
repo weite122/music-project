@@ -159,7 +159,9 @@ section>h2:first-child{
     color: #aaa;
 }
 
-
+#hotMusic > li:nth-child(-n+3) span{
+    color: #df3436;
+}
 .tabContent > li >.searchSong {
     padding: 4vw 2.6vw;
     position: relative;
@@ -203,6 +205,7 @@ section>h2:first-child{
     height: 30px;
     line-height: 26px;
     text-align: center;
+    display: none;
 }
 
 
@@ -245,20 +248,25 @@ section>h2:first-child{
     color: #507daf;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
-.searchRecommend >ol> li{
+.searchRecommend >ul> li{
     padding-left: 2.7vw;
     height: 13.3vw;
     line-height: 13.3vw;
     font-size: 4.3vw;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
-.searchRecommend >ol >li svg.search{
+#output > ul > li > a{
+    color: #507daf;
+    text-decoration: none;
+}
+.searchRecommend >ul >li svg.search{
     width: 4.3vw;
     height: 4.3vw;
     fill: #aaa;
     margin-right: 2vw;
     margin-bottom: -1px;
 }
+
 .playlists > ul{
     display: flex;
     flex-wrap: wrap;
@@ -351,6 +359,24 @@ section>h2:first-child{
     margin-right: 0.5em;
     fill: #fe672e;
 }
+
+.lastestMusic > ol > li .listNumber{
+    width: 10.7vw;
+    height: 10.7vw;
+    font-size: 4.5vw;
+    line-height: 10.7vw;
+    position: absolute;
+    left: 0vw;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #aaa;
+    text-align: center;
+}
+.lastestMusic > ol > li .listInformation {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10.7vw;
+}
 section.art{
     background: transparent url(http://s3.music.126.net/m/s/img/recommand_bg_2x.png?d045fafc60e017b653f8065a87496922) no-repeat center 0;
     padding-top: 17.6vw;
@@ -392,20 +418,3 @@ section.art .copyright{
 }
 
  
-.lastestMusic > ol > li .listNumber{
-    width: 10.7vw;
-    height: 10.7vw;
-    font-size: 4.5vw;
-    line-height: 10.7vw;
-    position: absolute;
-    left: 0vw;
-    top: 50%;
-    transform: translateY(-50%);
-    fill: #aaa;
-    text-align: center;
-}
-.lastestMusic > ol > li .listInformation {
-    display: flex;
-    flex-direction: column;
-    padding-left: 10.7vw;
-}
