@@ -74,7 +74,7 @@ $(function(){
     })
  })
 
-
+// tab切换
 $('.siteNav').on('click','ol.tabItems> li',function(e){
   let $li = $(e.currentTarget).addClass('active')
   $li.siblings().removeClass('active')
@@ -84,26 +84,18 @@ $('.siteNav').on('click','ol.tabItems> li',function(e){
     .siblings().removeClass('active')
 })
 
-// $('.siteNav').on('tabChange',function(e,index){
-//   let $li =  $('.tabContent > li').eq(index)
-//   if($li.attr('data-downloaded') === 'yes'){
-//     return
-//   }
-//   if(index === 1){
-//     return
-//     $.get('./page2.json').then((response)=>{
-//       $li.text(response.content)
-//       $li.attr('data-downloaded','yes')
-//     })
-//   }else if(index === 2){
-//     return
-//     $.get('./page3.json').then((response)=>{
-//       $li.text(response.content)
-//       $li.attr('data-downloaded','yes')
-//     })
-//   }
-// })
+function getDateStr(){
+  let today = new Date()
+  let year = today.getFullYear()
+  let month = today.getMonth()+1
+  let day = today.getDate()
+  return year+'年'+month+'月'+day+'日'
+}
 
+$('.hotTime>span').text(getDateStr())
+
+
+// 表单输入搜索效果
 $('.closebox').click(function(){
   $('#searchSong').val("")
   $('.closebox').hide()
