@@ -1,31 +1,36 @@
-$(function(){
+let Song = (function(){
 
-    let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
+    function _Song(){
+        this.getData()
+    }    
 
-    $.get('./songs.json').then(function(response){
-        let songs = response
-        let song = songs.filter(s=>s.id === id)[0]
-        let {url,name,lyric,image,backgroundImage} = song
-        // console.log(song)
-        initPlayer.call(undefined,url)
-        initText(name, lyric)
-        PlaceImage(image,backgroundImage)
-    })
-
-    function PlaceImage(image,backgroundImage){
-       let $disc = $('.disc-container>.disc')
-       let $image = $('<img class="cover">')
-       $image[0].src = image
-       $disc.append($image)
-       $('.page').css("background-image","url("+backgroundImage+")")
-  
-    }  
-       function initText(name, lyric){
-        $('.song-description > h1').text(name)
-        parseLyric(lyric)
+    _Song.prototype.getData = function(){
+        let _this = this
+        let id =  parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
+        $.get('../songs.json').then(function(response){
+            let songs = response
+            let song = songs.filter(s=>s.id === id)[0]
+            let {url,name,lyric,image,backgroundImage} = song
+            _this.initPlayer.call(undefined,url)
+            _this.initText(name, lyric)
+            _this.PlaceImage(image,backgroundImage)
+        })
     }
 
-    function initPlayer(url){
+    _Song.prototype.PlaceImage = function(image,backgroundImage){
+        let $disc = $('.disc-container>.disc')
+        let $image = $('<img class="cover">')
+        $image[0].src = image
+        $disc.append($image)
+        $('.page').css("background-image","url("+backgroundImage+")")
+    }
+
+    _Song.prototype.initText = function(name, lyric){
+        $('.song-description > h1').text(name)
+        this.parseLyric(lyric)
+    }
+
+    _Song.prototype.initPlayer = function(url){
         let audio = document.createElement('audio')
         audio.src = url
         audio.oncanplay = function(){
@@ -40,7 +45,11 @@ $(function(){
             audio.play()
             $('.disc-container').addClass('playing')
         })
+        function pad (number){
+            return number >= 10? number + '' : '0' + number
+        }
         setInterval(()=>{
+            let _this = this
             let seconds = audio.currentTime
             let minutes = ~~(seconds / 60)
             let left = seconds - minutes * 60
@@ -65,11 +74,11 @@ $(function(){
         },300)
     }
 
-    function pad(number){
+    _Song.prototype.pad = function(number){
         return number >= 10? number + '' : '0' + number
     }
 
-    function parseLyric(lyric){
+    _Song.prototype.parseLyric = function(lyric){
         let array = lyric.split('\n')
         let regex = /^\[(.+)\](.*)$/ 
         array = array.map(function(string,index){            
@@ -86,4 +95,12 @@ $(function(){
             $p.appendTo($lyric.children('.lines'))
         })
     }
-})
+    return {
+        init: function () {
+            new _Song()
+        }
+    }
+})()
+
+    Song.init()
+    // module.exports = Song
