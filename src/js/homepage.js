@@ -7,7 +7,7 @@ let HomePage = (function(){
       this.Timer()
     }
     _HomePage.prototype.getLastestMusic= function(){
-      $.get('../songs.json').then(function(response){
+      $.get('songs.json').then(function(response){
         let items = response
         items.forEach((i)=>{
             let $li = $(`
@@ -32,7 +32,7 @@ let HomePage = (function(){
     }
 
     _HomePage.prototype.getHotMusic= function(){
-      $.get('../songs.json').then(function(response){
+      $.get('songs.json').then(function(response){
         let items = response
         items.forEach((i)=>{
             let $li = $(`
@@ -61,7 +61,7 @@ let HomePage = (function(){
 
 
     _HomePage.prototype.getPlaylist= function(){ 
-      $.get('../playlist.json').then(function(response){
+      $.get('playlist.json').then(function(response){
         let items = response
         items.forEach((i)=>{
             let $li = $(`
