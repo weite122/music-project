@@ -1,5 +1,5 @@
 # NetEaseMusic
-[效果预览](https://weite122.github.io/NetEaseMusic/src/index.html):
+[效果需切换到手机端预览](https://weite122.github.io/NetEaseMusic/index.html):
 
 ![DeepinScreenshot_select-area_20170911114101.png](https://i.loli.net/2017/09/27/59cbaff34a1a9.png)
 ![DeepinScreenshot_select-area_20170911114018.png](https://i.loli.net/2017/09/27/59cbaff33f69f.png)
