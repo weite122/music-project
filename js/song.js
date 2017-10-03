@@ -7,7 +7,7 @@ let Song = (function(){
     _Song.prototype.getData = function(){
         let _this = this
         let id =  parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
-        $.get('./js/songs.json').then(function(response){
+        $.get('../songs.json').then(function(response){
             let songs = response
             let song = songs.filter(s=>s.id === id)[0]
             let {url,name,lyric,image,backgroundImage} = song
@@ -103,4 +103,4 @@ let Song = (function(){
 })()
 
     Song.init()
-    // module.exports = Song
+    module.exports = Song

@@ -1,12 +1,16 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
-
+let base = {
+    index: __dirname + '/js/index.js',
+    playlist:__dirname + '/js/playlist.js',
+    song: __dirname + '/js/song.js'
+}
 module.exports = {
-	entry: __dirname + '/js/index.js',
+	entry: base,
 	output:{
-		path: path.resolve(__dirname, 'dist'),  
-		filename: 'bundle.js'   
+        path: path.resolve(__dirname, 'dist'),  
+		filename: '_[name].js'   
 	},
 	plugins: [
         new ExtractTextPlugin({
@@ -14,21 +18,16 @@ module.exports = {
             disable: false,
             allChunks: true
         }),
+        
 	  ],
     module: {
         //加载器配置
         rules: [
-            { 
-                test: /\.js$/, 
-                loader: 'babel-loader'
-            },
-			{
-                test: /\.js$/,
+            {
+                test: /\.js[x]?$/,
+                exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
-                    query: {
-                        presets: ["es2015"]
-                    }
+                  loader:'babel-loader'
                 }
             },
             {
