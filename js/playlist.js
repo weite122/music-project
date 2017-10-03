@@ -15,7 +15,7 @@ let Playlist = (function(){
     _Playlist.prototype.getSongs = function(){
       let _this = this
       let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
-      $.get('../songs.json').then(function(response){
+      $.get('./js/songs.json').then(function(response){
         let items = response
         items.forEach((i)=>{
             let $li = $(`
@@ -101,5 +101,5 @@ let Playlist = (function(){
 }
 })()
 
-Playlist.init()
+// Playlist.init()
 module.exports = Playlist
