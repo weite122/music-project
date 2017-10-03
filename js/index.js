@@ -165,7 +165,7 @@ let HomePage = (function(){
 
 
     _HomePage.prototype.search = function(keyword){
-      console.log('搜索'+keyword)
+      // console.log('搜索'+keyword)
       return new Promise((resolve, reject)=>{
         var database = [
           { "id": 1, "name":"Earned It", },
@@ -184,7 +184,7 @@ let HomePage = (function(){
         })
         // console.log(result)
         setTimeout(function(){
-          console.log('搜到'+keyword+ '的结果')
+          // console.log('搜到'+keyword+ '的结果')
           resolve(result)
       }, (Math.random()*200 + 1000))
       })
@@ -197,6 +197,6 @@ let HomePage = (function(){
   }
   })()
   
-  // HomePage.init()
-  module.exports = HomePage
+  HomePage.init()
+  // module.exports = HomePage
 

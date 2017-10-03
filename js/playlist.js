@@ -43,7 +43,7 @@ let Playlist = (function(){
 
 
     _Playlist.prototype.getPlaylist = function(){
-      $.get('../js/playlist.json').then(function(response){
+      $.get('../playlist.json').then(function(response){
         let playlists = response
         let playlist = playlists.filter(s=>s.id == id)[0]
         let {image,backgroundImage,title,upImage,upName,label,introduction} = playlist
@@ -101,5 +101,5 @@ let Playlist = (function(){
 }
 })()
 
-// Playlist.init()
-module.exports = Playlist
+Playlist.init()
+// module.exports = Playlist

@@ -102,5 +102,5 @@ let Song = (function(){
     }
 })()
 
-    // Song.init()
-    module.exports = Song
+    Song.init()
+    // module.exports = Song
