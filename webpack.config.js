@@ -10,7 +10,9 @@ module.exports = {
 	entry: base,
 	output:{
         path: path.resolve(__dirname, 'dist'),  
-		filename: '_[name].js'   
+        hashDigestLength:3,
+        chunkFilename:'[chunkhash]_[name].js',
+		filename: '[chunkhash]_[name].js'   
 	},
 	plugins: [
         new ExtractTextPlugin({
