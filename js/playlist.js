@@ -15,7 +15,7 @@ let Playlist = (function(){
     _Playlist.prototype.getSongs = function(){
       let _this = this
       let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
-      $.get('../songs.json').then(function(response){
+      $.get('./songs.json').then(function(response){
         let items = response
         items.forEach((i)=>{
             let $li = $(`
@@ -43,7 +43,7 @@ let Playlist = (function(){
 
 
     _Playlist.prototype.getPlaylist = function(){
-      $.get('../playlist.json').then(function(response){
+      $.get('./playlist.json').then(function(response){
         let playlists = response
         let playlist = playlists.filter(s=>s.id == id)[0]
         let {image,backgroundImage,title,upImage,upName,label,introduction} = playlist
